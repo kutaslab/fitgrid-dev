@@ -14,12 +14,10 @@ authors:
     orcid: 0000-0001-7993-142X
     affiliation: 1
   - name: Andrey S. Portnoy
-    affiliation: 2
+    affiliation: 1
 affiliations:
  - name: Department of Cognitive Science, University of California, San Diego
    index: 1
- - name: Cerebras Systems
-   index: 2
 date: 10 February 2021
 bibliography: paper.bib
 ---
