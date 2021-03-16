@@ -66,7 +66,7 @@ comes a new problem.
 
 Interpreting recordings of brain responses and drawing inferences from
 patterns of systematic variation is based on statistical comparison and
-evaulation of candidate models.  Whereas fitting a regression model is
+evaluation of candidate models.  Whereas fitting a regression model is
 straightforward on current scientific computing platforms, informative
 modeling, by contrast, is a laborious process that iterates cycles of
 data quality control, fitting, data diagnosis, model evaluation,
