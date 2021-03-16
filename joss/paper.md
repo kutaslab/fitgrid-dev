@@ -14,12 +14,10 @@ authors:
     orcid: 0000-0001-7993-142X
     affiliation: 1
   - name: Andrey S. Portnoy
-    affiliation: 2
+    affiliation: 1
 affiliations:
  - name: Department of Cognitive Science, University of California, San Diego
    index: 1
- - name: Cerebras Systems
-   index: 2
 date: 10 February 2021
 bibliography: paper.bib
 ---
@@ -68,7 +66,7 @@ comes a new problem.
 
 Interpreting recordings of brain responses and drawing inferences from
 patterns of systematic variation is based on statistical comparison and
-evaulation of candidate models.  Whereas fitting a regression model is
+evaluation of candidate models.  Whereas fitting a regression model is
 straightforward on current scientific computing platforms, informative
 modeling, by contrast, is a laborious process that iterates cycles of
 data quality control, fitting, data diagnosis, model evaluation,
@@ -196,9 +194,32 @@ and Issues may be posted there in accordance with the `fitgrid` Code
 of Conduct.
 
 
-## How it works
+## Implementation
+The core function of `fitgrid` is to apply a linear regression or a
+linear mixed effects model to datasets encapsulated in an input
+`Epochs` object. The output is a `FitGrid` which maintains a 2D grid
+of fit objects, each representing the results of fitting the model on
+the dataset associated with the grid point.
 
-[TODO ... Andrey]
+The `FitGrid` object exposes the same attributes and methods that the
+individual fit objects provide. Attribute accesses and method calls
+are broadcast to each cell in the grid with results returned in a form
+that mirrors the shape of the original grid, eliminating the need for
+explicit iteration over the elements. NumPy array slicing syntax is
+supported for indexing on the grid dimensions (time and channels when
+applied to EEG data). This functionality is achieved by implementing
+some of Python's special methods like `__getitem__`, `__getattr__`,
+`__call__`, `__dir__` in the `FitGrid` class.
+
+As a result, the cognitive load on the researcher is lightened since
+the familiar interfaces of a fit object (used to examine model fit
+characteristics) and of a 2D NumPy array (used to index on the space
+and time dimensions) are combined in a single entity.
+
+When multiple model formulations are used, the resulting `FitGrid`
+objects can be used to compare goodness of fit measures and carry out
+mass model comparison and selection. This is one of the main
+applications enabled by the framework described in this section.
 
 ## Limitations
 
