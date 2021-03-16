@@ -212,7 +212,7 @@ some of Python's special methods like `__getitem__`, `__getattr__`,
 `__call__`, `__dir__` in the `FitGrid` class.
 
 As a result, the cognitive load on the researcher is lightened since
-the familiar interface of a fit object (used to examine model fit
+the familiar interfaces of a fit object (used to examine model fit
 characteristics) and of a 2D NumPy array (used to index on the space
 and time dimensions) are combined in a single entity.
 
