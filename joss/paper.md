@@ -46,7 +46,7 @@ mathematically identical to the estimated constant
 $\hat{\beta}_{0}(t)$ for the regression model $y(t) = \beta_{0}(t) +
 \varepsilon(t)$, fit by minimizing squared error [@SmiKut2015]. The
 average ERP can be viewed as a time series of model parameter
-estimates and generalizing to more complex models, e.g., multiple
+estimates. Generalizing to more complex models, e.g., multiple
 regression $y(t) = \beta_{0} + \beta_{1}X_{1} + \ldots +
 \beta_{p}X_{p} + \varepsilon$, likewise produces time series of
 estimates for the constant and each regressor coefficient, the
@@ -123,13 +123,13 @@ interpretation.
 While the origins of `fitgrid` are in EEG data analysis, `fitgrid` can
 also be used with other neuroimaging data such as MEG and more
 generally with synchronized sensor array time-series data from other
-domains where event-related regression modeling is appropriate.
-`fitgrid` enables researchers to conduct this type of computationally
-intensive modeling flexibly, efficiently, informatively, and
-reproducibly with familiar scientific computing tools and minimal
-programming. These features make `fitgrid` well-suited for general use
-in exploratory data analysis (EDA), e.g., @UrbDelChaKut2020 and
-@TroUrbKut2020.
+domains for which event-related regression modeling is appropriate.
+`fitgrid` enables researchers to conduct this type of
+computationally-intensive modeling flexibly, efficiently,
+informatively, and reproducibly with familiar scientific computing
+tools and minimal programming. These features make `fitgrid`
+well-suited for general use in exploratory data analysis (EDA), e.g.,
+@UrbDelChaKut2020 and @TroUrbKut2020.
 
 ![fitgrid TL; DR](fitgrid_overview.png)
 
@@ -231,7 +231,7 @@ relations can be computed with, e.g., $\mathsf{x + pow(x, 2)}$ if this
 seems like a good idea. If spline regression as described in
 @SmiKut2015b seems like a better idea, `patsy` also provides built-in
 functions for generating families of spline bases, although the
-researcher is responsible for ensuring the data epochs are
+researcher is responsible for ensuring that the data epochs are
 appropriately mapped to the spline regression variables which may
 require additional programming. @SmiKut2015b also generalizes rERP
 estimation from iteratively fitting fixed-length epochs of length $L$
@@ -253,7 +253,7 @@ estimated regression coefficients. For fitting the wide $\mathsf{L
 designed for that approach such as the rERPy package or the
 implementation in MNE Python may be a better choice.
 
-# Acknowledgements and Contributions
+# Acknowledgments and Contributions
 
 This project was developed in the Kutas Cognitive Electrophysiology
 Laboratory, Department of Cognitive Science, University of California,
